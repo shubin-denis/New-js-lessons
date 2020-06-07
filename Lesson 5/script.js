@@ -76,7 +76,7 @@ let appData = {
     chooseIncome: function() {
         let userAnswer = prompt('Что принесет дополнительный доход? (Перечислите через запятую)');
 
-        while(!isNaN(userAnswer) || userAnswer == '' || userAnswer == null) {
+        while(typeof(userAnswer) != "string" || userAnswer == '' || userAnswer == null) {
             userAnswer = prompt('Что принесет дополнительный доход? (Перечислите через запятую)');
         }
 
@@ -91,5 +91,5 @@ let appData = {
 };
 
 for (let key in appData) {
-    console.log(`Наша программа включает в себя данные: ${key}`);
+    console.log(`Наша программа включает в себя данные: ${key} - ${appData[key]}`);
 }
